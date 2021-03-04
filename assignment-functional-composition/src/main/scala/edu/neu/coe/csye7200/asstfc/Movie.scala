@@ -123,13 +123,12 @@ object Movie extends App {
     }
     source.close()
   }
-  
-  type MovieSeq = Seq[Movie]
+
   import MoviesProtocol._
 
   def testSerializationAndDeserialization(ms: Seq[Movie]): Boolean = {
     val newMs = ms.toJson
-    val oldMs = newMs.convertTo[MovieSeq]
+    val oldMs = newMs.convertTo[Seq[Movie]]
     oldMs == ms
   }
 
