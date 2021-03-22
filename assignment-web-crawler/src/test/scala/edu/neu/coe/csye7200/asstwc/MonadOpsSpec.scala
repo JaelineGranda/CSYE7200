@@ -15,11 +15,11 @@ class MonadOpsSpec extends flatspec.AnyFlatSpec with should.Matchers with Future
   import MonadOps._
   import scala.concurrent.ExecutionContext.Implicits.global
 
-  behavior of "LiftFuture"
-  it should "work" in {
-    val g: Future[Int] => Future[String] = liftFuture(_.toString)
-    whenReady(g(Future(1))) { y => y should matchPattern { case "1" => } }
-  }
+//  behavior of "LiftFuture"
+//  it should "work" in {
+//    val g: Future[Int] => Future[String] = liftFuture(_.toString)
+//    whenReady(g(Future(1))) { y => y should matchPattern { case "1" => } }
+//  }
 
   behavior of "AsFuture"
   it should "work" in {
